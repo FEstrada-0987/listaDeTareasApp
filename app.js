@@ -12,6 +12,7 @@ const tareas = [
     {
         Titulo: "Estudiar HTML",
         Estado: "Terminado"
+        
     },
     {
         Titulo: "Estudiar CSS",
@@ -24,14 +25,15 @@ const tareas = [
     {
         Titulo: "Practicar JS",
         Estado: "En progreso"
+       
     },       
 
 ]
 
- for (let i = 0; i < tareas.length; i++){
+//  for (let i = 0; i < tareas.length; i++){
 //    // console.log(tareas[i])   // aca va me muestra en consola toda la estructura del array con su informacion
-   console.log(tareas[i].Titulo + " " + tareas[i].Estado)   // aca me muestra en consola el cotenido que hay en el titulo y Estado
- } 
+//     console.log(tareas[i].Titulo + " " + tareas[i].Estado)   // aca me muestra en consola el cotenido que hay en el titulo y Estado
+//  } 
  
 
 //2da forma de iterar con un FOR OF
@@ -46,6 +48,95 @@ const tareas = [
 
 //-------Desafío 2 -----------------------------------------------------------------------------------//
                 // Agregar tarea:
-                // Para agregar la tarea debemos crear una función que realizara el trabajo, recibira los parametros necesarios para la creacion de la tarea.
+                // Para agregar la tarea debemos crear una función que realizara el trabajo,
+                // recibira los parametros necesarios para la creacion de la tarea.
                 // Agregara la tarea al final del array de tareas.
                 // Al finalizar mostrar nuevamente el array de tareas
+
+                // const crearTarea = (titulo,estado) =>{
+
+                //                 tareas.push({Titulo: titulo, Estado: estado})
+                //                 return tareas
+                // } 
+                //                 console.log(crearTarea("Estudiar React", "Empezando"))
+                //                 console.log(tareas)
+
+                  // en lugar de usar un push uso el metodo map
+                      
+
+
+
+// ------------------Desafio 3-------------------------------------------------------
+                    // Listar tareas
+                    // Crear una funcion que mostrara las tareas solo del parametro dado.
+                    // Ejemplo:
+                    // mostrarTareas(“en progreso”) //Debera solo mostrar el array de objetos con tareas en progreso
+                    // Si la palabra ingresada en el parametro no coincide con ninguno de los 3 estados debera mostrar todas las tareas sin importar su estado. EjemploÑ mostrarTareas(“dujshadhasik”)
+                    // Comprobar el correcto funcionamiento con console.log
+                   
+
+                    const filtrarTareas = (estado) => {
+                          for(const tarea of tareas){ // itero para que busque el estado --- mi constante tarea 
+                            if (tarea.Estado ===  estado) {  // Si el estado de todos los parametros es igual a estado 
+                                tareas.filter(tar => tar.Estado === estado)  // le pido que me filtre por todas esas tareas q estoy buscando
+                                return  tarea        
+                            }
+                          }
+                         
+                            return tareas
+                        } 
+                         console.log(filtrarTareas("En progreso"))
+                         console.log(filtrarTareas("Pendiente"))
+                         console.log(filtrarTareas("lalala"))
+
+
+
+                    // const progreso = tareas.filter(element => element.Estado === `En progreso`)
+                    //  console.log(progreso)
+                    
+                    //  const noProgreso = tareas.filter(element => element.Estado != `En progreso`)
+                    // console.log(noProgreso)
+                   
+                    //      const crearTarea = tareas.filter(function (elemento){
+                            
+                    //         if (elemento.Estado === "En progreso") {
+                    //                 return true                         
+                    //             } 
+                    //             else {
+                    //                 return 
+                    //         }  
+                    // })
+                    //  console.log(crearTarea);                   
+
+                                // let fn = (e) => e.Estado === "En progreso";
+                                // return tareas.some(fn)
+                // console.log(tareas.some(fn)) // some se va a fijar q por lo menos uno cumpla con la condicion
+                                            
+
+
+
+
+
+
+
+
+
+// Desafio 4
+// Agregar Verificacion
+// Modificar la funcion del desafio 2, 
+//ya que si el titulo de la tarea que se desea ingresar 
+//ya existe en el array, debera devolvernos un mensaje de error, avisandonos que ya existe esa tarea.
+// En el caso de no existir, agregarlo normalmente
+
+       
+        // tareas.filter(element => element.Titulo=== "Estudiar HTML")
+    
+
+
+
+// Desafio 5
+// Existe tarea?
+
+// Crear una funcion que devolvera las tareas en donde el titulo coincida con el parametro dado. 
+// Ejemplo: existeTarea(“js”) // Devera devolver el array con los objetos que coincidan con el string sin importar su estado
+
