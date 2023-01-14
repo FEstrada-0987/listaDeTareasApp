@@ -28,8 +28,9 @@ const tareas = [
        
     },            
 ]     
-//console.log(tareas)
-
+//Ejercicio resuelto aqui
+console.log(tareas)
+                                //MIS ANOTACIONES Y PRUEBAS
                                 // CUATRO MANERAS DE ITERAR CON EN UN ARRAY DE OBJETOS
 
                                 //  for (let i = 0; i < tareas.length; i++){
@@ -55,41 +56,43 @@ const tareas = [
                 // Agregara la tarea al final del array de tareas.
                 // Al finalizar mostrar nuevamente el array de tareas
 
-// const crearTarea = (titulo,estado) =>{
+//Ejercicio resuelto aqui
+ const crearTarea = (titulo,estado) =>{
 
-//          tareas.push({Titulo: titulo, Estado: estado})
-//                  return tareas
-// } 
-//               console.log(crearTarea("Estudiar React", "Empezando"))
-//               console.log(tareas)
+          tareas.push({Titulo: titulo, Estado: estado})
+                  return tareas
+ } 
+               console.log(crearTarea("Estudiar React", "Empezando"))
+               console.log(tareas)
 
 
 
 
 // ------------------Desafio 3-------------------------------------------------------
-                    // Listar tareas
-                    // Crear una funcion que mostrara las tareas solo del parametro dado.
-                    // Ejemplo:
-                    // mostrarTareas(“en progreso”) //Debera solo mostrar el array de objetos con tareas en progreso
-                    // Si la palabra ingresada en el parametro no coincide con ninguno de los 3 estados debera mostrar todas las tareas sin importar su estado. EjemploÑ mostrarTareas(“dujshadhasik”)
-                    // Comprobar el correcto funcionamiento con console.log
+    // Listar tareas
+    // Crear una funcion que mostrara las tareas solo del parametro dado.
+    // Ejemplo:
+    // mostrarTareas(“en progreso”) //Debera solo mostrar el array de objetos con tareas en progreso
+     // Si la palabra ingresada en el parametro no coincide con ninguno de los 3 estados debera mostrar todas las tareas sin importar su estado. EjemploÑ mostrarTareas(“dujshadhasik”)
+    // Comprobar el correcto funcionamiento con console.log
                    
 
+//Ejercicio resuelto aqui
 
-//  const filtrarTareas = (estado) => {
-//    for(const tarea of tareas){ // itero para que busque el estado --- mi constante tarea 
-//          if (tarea.Estado ===  estado) {  // Si el estado de todos los parametros es igual a estado 
-//                 tareas.filter(tar => tar.Estado === estado)  // le pido que me filtre por todas esas tareas q estoy buscando
-//                      return  tarea        
-//          }
-//     }
-//         return tareas
-//  } 
-//         console.log(filtrarTareas("En progreso"))
+  const filtrarTareas = (estado) => {
+    for(const tarea of tareas){ // itero para que busque el estado --- mi constante tarea 
+          if (tarea.Estado ===  estado) {  // Si el estado de todos los parametros es igual a estado 
+                 tareas.filter(tar => tar.Estado === estado)  // le pido que me filtre por todas esas tareas q estoy buscando
+                      return  tarea        
+          }
+     }
+         return tareas
+  } 
+         console.log(filtrarTareas("En progreso"))
 //         //console.log(filtrarTareas("Pendiente"))
        // console.log(filtrarTareas("lalala"))
 
-
+                                                               //MIS ANOTACIONES Y PRUEBAS
 
                                                     // const progreso = tareas.filter(element => element.Estado === `En progreso`)
                                                     //  console.log(progreso)
@@ -128,14 +131,37 @@ const tareas = [
 //ya existe en el array, debera devolvernos un mensaje de error, avisandonos que ya existe esa tarea.
 // En el caso de no existir, agregarlo normalmente // el else seria pushear
 
-    //  const modificare =      
-     
-    //  tareas.map(tarea =>{
-    //     return tarea.Titulo = alert('existo')            
-    //  }) //NO SE COMO METER ESTO DENTRO DEL IF
-       
-    
-      
+//Ejercicio resuelto aqui
+
+const modificareDos = (titulo,estado) => {
+     tareas.forEach( tare => {
+         if(tare.Titulo === titulo) {
+             return "No existo"
+         }
+     })
+     tareas.push({Titulo:titulo, Estado: estado})
+     return tareas
+ }
+   console.log(modificareDos("Investigar React","Pendiente"))
+ 
+
+                                                    //MIS ANOTACIONES Y PRUEBAS
+                                                //  const modificare =      
+                                                
+                                                //  tareas.map(tarea =>{
+                                                //     return tarea.Titulo = alert('existo')            
+                                                //  }) //NO SE COMO METER ESTO DENTRO DEL IF
+                                                
+                                            //    const modificare2 = (titulo,estado) {
+                                            //     for(let i = 0; index , tareas.length; index ++){
+                                            //         if(tareas[index].Titulo === titulo){
+                                            //             return "Error ya existo"
+                                            //         } 
+                                            //             tareas.push({Titulo: titulo, Estado: estado})
+                                            //             return tareas
+                                            //     }
+                                            //    } 
+                                                
 
 // Desafio 5
 // Existe tarea?
@@ -143,10 +169,10 @@ const tareas = [
 // Crear una funcion que devolvera las tareas en donde el titulo coincida con el parametro dado. 
 // Ejemplo: existeTarea(“js”) // Devera devolver el array con los objetos que coincidan con el string sin importar su estado
 
-const existo = (obj,algo) =>{
-        if (obj.Titulo != " "){
-           const guardo = tareas.filter( elem => elem.Titulo.includes(obj.Titulo))
-           return guardo
-        }
+const existirOno = (str) => {
+   const filtrando = tareas.filter(tarea => tarea.Titulo.includes(str))
+   return filtrando 
 } 
-console.log(existo("Estudiar CSS"))
+   
+   console.log(existirOno("CS"))
+ 
